@@ -60,24 +60,44 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="pt-32 pb-20 px-6">
-    <div class="container mx-auto max-w-4xl text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-        <span class="code-font text-blue-400">AWS Solutions Architect</span><br>
-        Transformación Cloud para Empresas
-      </h1>
-      <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-        Implementación de arquitecturas escalables con seguridad enterprise-grade y optimización de costos
-      </p>
-      <a href="#contacto"
-        class="inline-block bg-blue-600 px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
-        Agenda Consultoría Gratuita
-      </a>
+  <header class="min-h-screen flex items-center relative" x-data="{ scrollY: 0 }"
+    @scroll.window="scrollY = window.scrollY">
+    <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+          x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 translate-y-20"
+          x-transition:enter-end="opacity-100 translate-y-0">
+          <span class="code-font text-blue-400">AWS Solutions Architect</span><br>
+          Transformación Cloud para Empresas
+        </h1>
+        <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
+          x-transition:enter="transition ease-out duration-1000 delay-200"
+          x-transition:enter-start="opacity-0 translate-y-20" x-transition:enter-end="opacity-100 translate-y-0">
+          Implementación de arquitecturas escalables con seguridad enterprise-grade y optimización de costos
+        </p>
+        <a href="#contacto"
+          class="inline-block bg-blue-600 px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+          x-transition:enter="transition ease-out duration-1000 delay-400"
+          x-transition:enter-start="opacity-0 translate-y-20" x-transition:enter-end="opacity-100 translate-y-0">
+          Agenda Consultoría Gratuita
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2" x-show="scrollY < 100"
+      x-transition:enter="transition ease-out duration-500" x-transition:leave="transition ease-in duration-300">
+      <div class="animate-bounce">
+        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
     </div>
   </header>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-20 bg-gray-800/50">
+  <section id="servicios" class="min-h-screen py-20 bg-gray-800/50">
     <div class="container mx-auto px-6">
       <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-3xl font-bold mb-4">Servicios Enterprise AWS</h2>
@@ -95,7 +115,7 @@
   </section>
 
   <!-- Casos de Éxito -->
-  <section id="casos" class="py-20">
+  <section id="casos" class="py-20 min-h-screen ">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold mb-12">Implementaciones Reales</h2>
       <div class="grid lg:grid-cols-2 gap-8">
@@ -117,7 +137,7 @@
   </section>
 
   <!-- Testimonios -->
-  <section id="testimonios" class="py-20 bg-gray-800/50">
+  <section id="testimonios" class="py-20 bg-gray-800/50 min-h-screen">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold mb-12">Clientes Enterprise</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -138,7 +158,7 @@
   </section>
 
   <!-- Recursos -->
-  <section id="recursos" class="py-20">
+  <section id="recursos" class="py-20 min-h-screen">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold mb-4">Recursos Técnicos</h2>
@@ -157,7 +177,7 @@
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-20 bg-gray-900">
+  <section id="contacto" class="py-20 bg-gray-900 min-h-screen">
     <div class="container mx-auto px-6">
       <div class="max-w-2xl mx-auto text-center mb-16">
         <h2 class="text-3xl font-bold mb-4">Consultoría AWS Nivel Enterprise</h2>
