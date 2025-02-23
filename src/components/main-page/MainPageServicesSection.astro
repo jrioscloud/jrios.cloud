@@ -1,14 +1,12 @@
 ---
-import services from '../../data/services.json'
+import services from "../../data/services.json";
 ---
 
-<section class="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50">
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
   <div class="container mx-auto px-6">
     <!-- Header -->
     <div class="max-w-3xl mx-auto text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">
-        Soluciones Enterprise AWS
-      </h2>
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Services</h2>
       <p class="text-xl text-gray-600">
         De la crisis a la arquitectura productiva
       </p>
@@ -16,24 +14,25 @@ import services from '../../data/services.json'
 
     <!-- Services Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service) => {
-        return (
-          <a href={service.link} class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              {service.code}
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              {service.title}
-            </h3>
-            <p class="text-gray-700">
-              {service.description}
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              {service.details}
-            </div>
-          </a>
-        );
-      })}
+      {
+        services.map((service) => {
+          return (
+            <a
+              href={service.link}
+              class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
+            >
+              <div class="text-blue-600 font-mono mb-4">{service.code}</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                {service.title}
+              </h3>
+              <p class="text-gray-700">{service.description}</p>
+              <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+                {service.details}
+              </div>
+            </a>
+          );
+        })
+      }
     </div>
   </div>
 </section>

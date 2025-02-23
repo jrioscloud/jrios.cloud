@@ -1,5 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/Page.astro";
+
+const caseStudies = (await getCollection("caseStudies")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <PageLayout>
@@ -7,39 +12,44 @@ import PageLayout from "../../layouts/Page.astro";
         <h1 class="text-5xl font-bold mb-16 text-center">Case Studies</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-1 gap-12">
-            <!-- Case Study Card 1 -->
-            <article class="p-6 transition-shadow flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-4 md:mb-0">
-                    <img
-                        src="https://placehold.co/600x400/EEE/31343C"
-                        alt="ShowPixels Screenshot"
-                        class="w-full h-auto rounded-md"
-                    />
-                </div>
-                <div class="md:w-1/2 md:pl-6">
-                    <div class="flex flex-wrap gap-2 mb-2">
-                        <span
-                            class="px-2 py-1 bg-gray-200 text-gray-800 text-xs font-semibold rounded-full"
-                        >
-                            Landing Page
-                        </span>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-1">
-                        ShowPixels
-                    </h3>
-                    <p class="text-lg text-gray-700 mb-2">
-                        Stop Being Your Industry's Best-Kept Secret
-                    </p>
-                    <p class="text-sm text-gray-500 mb-4">
-                        Redesign That Brought 3 High-Ticket Clients in Just 1
-                        Week
-                    </p>
-                    <ul class="text-sm text-gray-500 space-y-1">
-                        <li><strong>Duration:</strong> 3 weeks</li>
-                        <li><strong>Industry:</strong> Agency</li>
-                    </ul>
-                </div>
-            </article>
+            {
+                caseStudies.map((caseStudy) => (
+                    <article class="p-6 transition-shadow flex flex-col md:flex-row">
+                        <div class="md:w-1/2 mb-4 md:mb-0">
+                            <img
+                                src="https://placehold.co/600x400/EEE/31343C"
+                                alt="ShowPixels Screenshot"
+                                class="w-full h-auto rounded-md"
+                            />
+                        </div>
+                        <div class="md:w-1/2 md:pl-6">
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                <span class="px-2 py-1 bg-gray-200 text-gray-800 text-xs font-semibold rounded-full">
+                                    Landing Page
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-1">
+                                ShowPixels
+                            </h3>
+                            <p class="text-lg text-gray-700 mb-2">
+                                Stop Being Your Industry's Best-Kept Secret
+                            </p>
+                            <p class="text-sm text-gray-500 mb-4">
+                                Redesign That Brought 3 High-Ticket Clients in
+                                Just 1 Week
+                            </p>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>
+                                    <strong>Duration:</strong> 3 weeks
+                                </li>
+                                <li>
+                                    <strong>Industry:</strong> Agency
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                ))
+            }
         </div>
     </div>
 </PageLayout>
