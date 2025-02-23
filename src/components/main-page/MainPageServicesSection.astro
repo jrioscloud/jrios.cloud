@@ -1,70 +1,112 @@
----
----
-<section id="servicios" class="min-h-screen py-20 bg-gray-900/50 dark:bg-gray-800/50">
-    <div class="container mx-auto px-6">
-        <!-- Encabezado -->
+   <section class="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50">
+      <div class="container mx-auto px-6">
+        {/* Header */}
         <div class="max-w-3xl mx-auto text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                Servicios Enterprise AWS
-            </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400">
-                De migraciones complejas a arquitecturas multi-account
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Soluciones Enterprise AWS
+          </h2>
+          <p class="text-xl text-gray-600">
+            De la crisis a la arquitectura productiva
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Data Sovereignty Service */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Data Sovereignty]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Soberanía de Datos
+            </h3>
+            <p class="text-gray-700">
+              Sistema centralizado de gestión de datos multi-región con control total sobre la información crítica
             </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Implementado en: Campañas enterprise con +20k usuarios
+            </div>
+          </div>
+
+          {/* Testing Framework */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Testing Framework]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Framework de Testing AWS
+            </h3>
+            <p class="text-gray-700">
+              Sistema automatizado para testing de arquitecturas serverless complejas
+            </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Validado en: Despliegues críticos 24/7
+            </div>
+          </div>
+
+          {/* Crisis Management */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Crisis Management]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Gestión de Crisis AWS
+            </h3>
+            <p class="text-gray-700">
+              Resolución y prevención de incidentes en arquitecturas enterprise
+            </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Probado en: UATs de 14+ horas con éxito
+            </div>
+          </div>
+
+          {/* Multi-Region Architecture */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Multi-Region]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Arquitectura Multi-Región
+            </h3>
+            <p class="text-gray-700">
+              Diseño e implementación de sistemas distribuidos resilientes
+            </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Experiencia: Sistemas con millones de usuarios
+            </div>
+          </div>
+
+          {/* Cost Optimization */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Cost Optimization]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Optimización de Costos
+            </h3>
+            <p class="text-gray-700">
+              Reducción estratégica de costos sin comprometer rendimiento
+            </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Especialidad: Arquitecturas serverless enterprise
+            </div>
+          </div>
+
+          {/* Security Assessment */}
+          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+            <div class="text-blue-600 font-mono mb-4">
+              [Security]
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              Auditoría de Seguridad
+            </h3>
+            <p class="text-gray-700">
+              Evaluación y mejora de arquitecturas AWS existentes
+            </p>
+            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              Basado en: Well-Architected Framework
+            </div>
+          </div>
         </div>
-
-        <!-- Grid de Servicios -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Tarjeta de Servicio 1 -->
-            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:border-blue-500 hover:shadow-lg transition-all">
-                <div class="code-font text-blue-500 dark:text-blue-400 mb-4">
-                    [Migration]
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                    Migración Enterprise
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    Planificación y ejecución de migraciones complejas con Near-Zero Downtime
-                </p>
-            </div>
-
-            <!-- Tarjeta de Servicio 2 -->
-            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:border-blue-500 hover:shadow-lg transition-all">
-                <div class="code-font text-blue-500 dark:text-blue-400 mb-4">
-                    [Architecture]
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                    Arquitectura Multi-Account
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    Diseño e implementación de arquitecturas escalables y seguras
-                </p>
-            </div>
-
-            <!-- Tarjeta de Servicio 3 -->
-            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:border-blue-500 hover:shadow-lg transition-all">
-                <div class="code-font text-blue-500 dark:text-blue-400 mb-4">
-                    [Optimization]
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                    Optimización de Costos
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    Análisis y reducción de costos en infraestructura AWS
-                </p>
-            </div>
-
-            <!-- Tarjeta de Servicio 4 -->
-            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700 shadow-md hover:border-blue-500 hover:shadow-lg transition-all">
-                <div class="code-font text-blue-500 dark:text-blue-400 mb-4">
-                    [Security]
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                    Seguridad y Cumplimiento
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                    Implementación de mejores prácticas de seguridad y cumplimiento normativo
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
