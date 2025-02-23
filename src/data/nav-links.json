@@ -8,20 +8,7 @@
     "url": "/services"
   },
   {
-    "name": "Success Stories",
-    "url": "/testimonials"
-  },
-  {
-    "name": "Testimonials",
-    "url": "/testimonials"
-  },
-  {
-    "name": "Resources",
-    "url": "/resources"
-  },
-    {
-    "name": "Blog",
-    "url": "/blog"
+    "name": "Case Studies",
+    "url": "/case-studies"
   }
-
 ]
