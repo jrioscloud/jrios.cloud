@@ -6,6 +6,7 @@ const services = [
     description:
       "Sistema centralizado de gestión de datos multi-región con control total sobre la información crítica",
     details: "Implementado en: Campañas enterprise con +20k usuarios",
+    link: "/services/data-sovereignty",
   },
   {
     code: "[Testing Framework]",
@@ -13,6 +14,7 @@ const services = [
     description:
       "Sistema automatizado para testing de arquitecturas serverless complejas",
     details: "Validado en: Despliegues críticos 24/7",
+    link: "/services/testing-framework",
   },
   {
     code: "[Crisis Management]",
@@ -20,6 +22,7 @@ const services = [
     description:
       "Resolución y prevención de incidentes en arquitecturas enterprise",
     details: "Probado en: UATs de 14+ horas con éxito",
+    link: "/services/crisis-management",
   },
   {
     code: "[Multi-Region]",
@@ -27,6 +30,7 @@ const services = [
     description:
       "Diseño e implementación de sistemas distribuidos resilientes",
     details: "Experiencia: Sistemas con millones de usuarios",
+    link: "/services/multi-region",
   },
   {
     code: "[Cost Optimization]",
@@ -34,6 +38,7 @@ const services = [
     description:
       "Reducción estratégica de costos sin comprometer rendimiento",
     details: "Especialidad: Arquitecturas serverless enterprise",
+    link: "/services/cost-optimization",
   },
   {
     code: "[Security]",
@@ -41,6 +46,7 @@ const services = [
     description:
       "Evaluación y mejora de arquitecturas AWS existentes",
     details: "Basado en: Well-Architected Framework",
+    link: "/services/security-audit",
   },
 ];
 ---
@@ -60,7 +66,7 @@ const services = [
     <!-- Services Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service) => (
-        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+        <a href={service.link} class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
           <div class="text-blue-600 font-mono mb-4">
             {service.code}
           </div>
@@ -73,7 +79,7 @@ const services = [
           <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
             {service.details}
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
