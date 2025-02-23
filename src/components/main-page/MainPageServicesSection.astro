@@ -1,112 +1,80 @@
-   <section class="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50">
-      <div class="container mx-auto px-6">
-        {/* Header */}
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Soluciones Enterprise AWS
-          </h2>
-          <p class="text-xl text-gray-600">
-            De la crisis a la arquitectura productiva
+---
+const services = [
+  {
+    code: "[Data Sovereignty]",
+    title: "Soberanía de Datos",
+    description:
+      "Sistema centralizado de gestión de datos multi-región con control total sobre la información crítica",
+    details: "Implementado en: Campañas enterprise con +20k usuarios",
+  },
+  {
+    code: "[Testing Framework]",
+    title: "Framework de Testing AWS",
+    description:
+      "Sistema automatizado para testing de arquitecturas serverless complejas",
+    details: "Validado en: Despliegues críticos 24/7",
+  },
+  {
+    code: "[Crisis Management]",
+    title: "Gestión de Crisis AWS",
+    description:
+      "Resolución y prevención de incidentes en arquitecturas enterprise",
+    details: "Probado en: UATs de 14+ horas con éxito",
+  },
+  {
+    code: "[Multi-Region]",
+    title: "Arquitectura Multi-Región",
+    description:
+      "Diseño e implementación de sistemas distribuidos resilientes",
+    details: "Experiencia: Sistemas con millones de usuarios",
+  },
+  {
+    code: "[Cost Optimization]",
+    title: "Optimización de Costos",
+    description:
+      "Reducción estratégica de costos sin comprometer rendimiento",
+    details: "Especialidad: Arquitecturas serverless enterprise",
+  },
+  {
+    code: "[Security]",
+    title: "Auditoría de Seguridad",
+    description:
+      "Evaluación y mejora de arquitecturas AWS existentes",
+    details: "Basado en: Well-Architected Framework",
+  },
+];
+---
+
+<section class="min-h-screen py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Soluciones Enterprise AWS
+      </h2>
+      <p class="text-xl text-gray-600">
+        De la crisis a la arquitectura productiva
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
+          <div class="text-blue-600 font-mono mb-4">
+            {service.code}
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            {service.title}
+          </h3>
+          <p class="text-gray-700">
+            {service.description}
           </p>
-        </div>
-
-        {/* Services Grid */}
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Data Sovereignty Service */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Data Sovereignty]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Soberanía de Datos
-            </h3>
-            <p class="text-gray-700">
-              Sistema centralizado de gestión de datos multi-región con control total sobre la información crítica
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Implementado en: Campañas enterprise con +20k usuarios
-            </div>
-          </div>
-
-          {/* Testing Framework */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Testing Framework]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Framework de Testing AWS
-            </h3>
-            <p class="text-gray-700">
-              Sistema automatizado para testing de arquitecturas serverless complejas
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Validado en: Despliegues críticos 24/7
-            </div>
-          </div>
-
-          {/* Crisis Management */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Crisis Management]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Gestión de Crisis AWS
-            </h3>
-            <p class="text-gray-700">
-              Resolución y prevención de incidentes en arquitecturas enterprise
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Probado en: UATs de 14+ horas con éxito
-            </div>
-          </div>
-
-          {/* Multi-Region Architecture */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Multi-Region]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Arquitectura Multi-Región
-            </h3>
-            <p class="text-gray-700">
-              Diseño e implementación de sistemas distribuidos resilientes
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Experiencia: Sistemas con millones de usuarios
-            </div>
-          </div>
-
-          {/* Cost Optimization */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Cost Optimization]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Optimización de Costos
-            </h3>
-            <p class="text-gray-700">
-              Reducción estratégica de costos sin comprometer rendimiento
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Especialidad: Arquitecturas serverless enterprise
-            </div>
-          </div>
-
-          {/* Security Assessment */}
-          <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500">
-            <div class="text-blue-600 font-mono mb-4">
-              [Security]
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              Auditoría de Seguridad
-            </h3>
-            <p class="text-gray-700">
-              Evaluación y mejora de arquitecturas AWS existentes
-            </p>
-            <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-              Basado en: Well-Architected Framework
-            </div>
+          <div class="mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+            {service.details}
           </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
