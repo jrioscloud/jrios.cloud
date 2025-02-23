@@ -5,46 +5,70 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <Header />
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">Consultor Certificado AWS | Soluciones Cloud Empresariales</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h2 class="text-xl font-semibold mb-2">Servicios</h2>
+            <ul class="list-disc list-inside">
+              <li>AWS Solutions Architect - Transformación Cloud para Empresas</li>
+              <li>Implementación de arquitecturas escalables con seguridad enterprise-grade y optimización de costos</li>
+              <li>Agenda Consultoría Gratuita</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-2">Casos de Éxito</h2>
+            <ul class="list-disc list-inside">
+              <li>Fintech | 2024 - Arquitectura de Pagos Globales</li>
+              <li>Sistema transaccional multi-región con auto-scaling para picos de 50k TPS</li>
+              <li>Tecnologías: AWS Lambda | API Gateway | DynamoDB Global Tables</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">Testimonios</h2>
+        <blockquote class="border-l-4 border-blue-500 pl-4">
+          <p class="mb-2">"Implementamos una arquitectura serverless que redujo nuestros costos operativos en 65% manteniendo compliance PCI DSS"</p>
+          <footer class="text-sm text-gray-500">Carlos Méndez, CTO Fintech</footer>
+        </blockquote>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">Recursos</h2>
+        <ul class="list-disc list-inside">
+          <li><a href="#" class="text-blue-500 hover:text-blue-600">Material descargable para equipos DevOps</a></li>
+          <li><a href="#" class="text-blue-500 hover:text-blue-600">Plantilla CloudFormation para multi-account con seguridad enterprise</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">Consultoría AWS Nivel Enterprise</h2>
+        <form class="space-y-4">
+          <label class="block">
+            <span class="text-gray-700">Seleccione servicio requerido</span>
+            <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              <option value="migracion-enterprise">Migración Enterprise</option>
+              <option value="arquitectura-serverless">Arquitectura Serverless</option>
+            </select>
+          </label>
+          <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Solicitar Propuesta
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
