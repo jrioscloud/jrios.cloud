@@ -5,87 +5,74 @@ import socialLinks from "../data/social-links.json";
 import navLinks from "../data/nav-links.json";
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+<header class="bg-white shadow">
+	<nav class="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+		<!-- Logo / Título -->
+		<h2 class="text-lg font-bold">
+			<a href="/" class="text-gray-800 no-underline">
+				{SITE_TITLE}
+			</a>
+		</h2>
+
+		<!-- Enlaces internos -->
+		<div class="hidden md:flex space-x-4">
 			{
 				navLinks.map((link) => (
 					<HeaderLink href={link.url}>{link.name}</HeaderLink>
 				))
 			}
 		</div>
-		<div class="social-links">
+
+		<!-- Enlaces sociales -->
+		<div class="hidden md:flex space-x-3">
 			{
 				socialLinks.map((link) => (
-					<a href={link.url} target="_blank">
+					<a
+						href={link.url}
+						target="_blank"
+						class="text-gray-600 hover:text-gray-800"
+					>
 						<span class="sr-only">{link.srText}</span>
 						<svg
 							viewBox="0 0 16 16"
 							aria-hidden="true"
-							width="32"
-							height="32"
+							width="24"
+							height="24"
+							fill="currentColor"
 						>
-							<path fill="currentColor" d={link.svgPath} />
+							<path d={link.svgPath} />
 						</svg>
 					</a>
 				))
 			}
 		</div>
-		<div class="flex items-center">
+
+		<!-- CTA -->
+		<div class="ml-4">
 			<a
 				href="/strategic-call"
-				class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 no-underline"
+				class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+               bg-white border border-gray-200 text-gray-700 text-sm
+               font-medium shadow-sm hover:shadow-md
+               transition-transform duration-300 hover:scale-105 no-underline"
 			>
-				<span>90-min AWS Strategy Session</span>
-				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+				<span>Got an idea?</span>
+				<!-- Ícono opcional -->
+				<svg
+					class="w-4 h-4"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
 					<path
-						fill-rule="evenodd"
-						d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-						clip-rule="evenodd"></path>
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M15.172 7l-6.586 6.586c-.78.78-.78 2.047 0 2.828l.293.293c.78.78 2.047.78 2.828 0L18 10.414"
+					></path>
 				</svg>
 			</a>
 		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
