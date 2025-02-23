@@ -1,0 +1,44 @@
+[
+  {
+    "code": "[Data Sovereignty]",
+    "title": "Data Sovereignty",
+    "description": "Centralized multi-region data management system with full control over critical information",
+    "details": "Implemented in: Enterprise campaigns with +20k users",
+    "link": "/services/data-sovereignty"
+  },
+  {
+    "code": "[Testing Framework]",
+    "title": "AWS Testing Framework",
+    "description": "Automated system for testing complex serverless architectures",
+    "details": "Validated in: Critical 24/7 deployments",
+    "link": "/services/testing-framework"
+  },
+  {
+    "code": "[Crisis Management]",
+    "title": "AWS Crisis Management",
+    "description": "Resolution and prevention of incidents in enterprise architectures",
+    "details": "Tested in: UATs of 14+ hours successfully",
+    "link": "/services/crisis-management"
+  },
+  {
+    "code": "[Multi-Region]",
+    "title": "Multi-Region Architecture",
+    "description": "Design and implementation of resilient distributed systems",
+    "details": "Experience: Systems with millions of users",
+    "link": "/services/multi-region"
+  },
+  {
+    "code": "[Cost Optimization]",
+    "title": "Cost Optimization",
+    "description": "Strategic cost reduction without compromising performance",
+    "details": "Specialty: Enterprise serverless architectures",
+    "link": "/services/cost-optimization"
+  },
+  {
+    "code": "[Security]",
+    "title": "Security Audit",
+    "description": "Evaluation and improvement of existing AWS architectures",
+    "details": "Based on: Well-Architected Framework",
+    "link": "/services/security-audit"
+  }
+]
