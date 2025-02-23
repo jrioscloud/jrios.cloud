@@ -1,7 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import MainPageHeroSection from '../components/MainPageHeroSection.astro';
+import MainPageHeroSection from '../components/main-page/MainPageHeroSection.astro';
 import Header from '../components/Header.astro';
+import MainPageServicesSection from '../components/main-page/MainPageServicesSection.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
@@ -14,31 +15,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
     <Header />
 
+    <MainPageHeroSection />
+    <MainPageServicesSection />
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
-      <MainPageHeroSection />
-		<section class="mb-8">
-        
-		<h1 class="text-4xl font-bold mb-4">Consultor Certificado AWS | Soluciones Cloud Empresariales</h1>
-        
+      <section class="mb-8">
 		
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h2 class="text-xl font-semibold mb-2">Servicios</h2>
-            <ul class="list-disc list-inside">
-              <li>AWS Solutions Architect - Transformación Cloud para Empresas</li>
-              <li>Implementación de arquitecturas escalables con seguridad enterprise-grade y optimización de costos</li>
-              <li>Agenda Consultoría Gratuita</li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold mb-2">Casos de Éxito</h2>
-            <ul class="list-disc list-inside">
-              <li>Fintech | 2024 - Arquitectura de Pagos Globales</li>
-              <li>Sistema transaccional multi-región con auto-scaling para picos de 50k TPS</li>
-              <li>Tecnologías: AWS Lambda | API Gateway | DynamoDB Global Tables</li>
-            </ul>
-          </div>
-        </div>
       </section>
 
       <section class="mb-8">
