@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Home",
+    "url": "/"
+  },
+  {
+    "name": "Services",
+    "url": "/services"
+  },
+  {
+    "name": "Success Stories",
+    "url": "/testimonials"
+  },
+  {
+    "name": "Testimonials",
+    "url": "/testimonials"
+  },
+  {
+    "name": "Resources",
+    "url": "/resources"
+  },
+    {
+    "name": "Blog",
+    "url": "/blog"
+  },
+
+]
