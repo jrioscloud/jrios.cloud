@@ -1,0 +1,77 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+
+const services = [
+  {
+    title: 'Migración a AWS',
+    description:
+      'Te ayudamos a migrar tus aplicaciones y datos a AWS de manera segura y eficiente, minimizando el tiempo de inactividad y maximizando el rendimiento.',
+    link: '/services/migracion-aws',
+  },
+  {
+    title: 'Arquitectura Serverless',
+    description:
+      'Diseñamos arquitecturas serverless escalables y rentables utilizando servicios como AWS Lambda, API Gateway y DynamoDB.',
+    link: '/services/arquitectura-serverless',
+  },
+  {
+    title: 'DevOps en AWS',
+    description:
+      'Implementamos pipelines CI/CD automatizados y mejores prácticas de DevOps para optimizar tus procesos de desarrollo y despliegue en AWS.',
+    link: '/services/devops-aws',
+  },
+];
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={`Servicios - ${SITE_TITLE}`}
+      description="Descubre nuestros servicios especializados en AWS, desde migración hasta arquitectura serverless y DevOps."
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <Header />
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+      <section class="mb-8">
+        <h1 class="text-3xl font-bold mb-4">Nuestros Servicios</h1>
+        <p class="text-gray-600">
+          Ofrecemos soluciones personalizadas en AWS para ayudarte a alcanzar tus objetivos de negocio. Descubre cómo podemos transformar tu infraestructura.
+        </p>
+      </section>
+
+      <section class="space-y-8">
+        {services.map((service) => (
+          <article class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-2">{service.title}</h2>
+            <p class="text-gray-700 mb-4">{service.description}</p>
+            <a
+              href={service.link}
+              class="inline-flex items-center text-blue-500 hover:text-blue-600"
+            >
+              Ver más
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </article>
+        ))}
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
