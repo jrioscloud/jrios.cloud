@@ -1,13 +1,13 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import MainPageHeroSection from '../components/main-page/MainPageHeroSection.astro';
-import Header from '../components/Header.astro';
-import MainPageServicesSection from '../components/main-page/MainPageServicesSection.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import MainPageHeroSection from "../components/main-page/MainPageHeroSection.astro";
+import Header from "../components/Header.astro";
+import MainPageServicesSection from "../components/main-page/MainPageServicesSection.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -19,36 +19,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <MainPageServicesSection />
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
       <section class="mb-8">
-		
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">Testimonios</h2>
-        <blockquote class="border-l-4 border-blue-500 pl-4">
-          <p class="mb-2">"Implementamos una arquitectura serverless que redujo nuestros costos operativos en 65% manteniendo compliance PCI DSS"</p>
-          <footer class="text-sm text-gray-500">Carlos Méndez, CTO Fintech</footer>
-        </blockquote>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">Recursos</h2>
-        <ul class="list-disc list-inside">
-          <li><a href="#" class="text-blue-500 hover:text-blue-600">Material descargable para equipos DevOps</a></li>
-          <li><a href="#" class="text-blue-500 hover:text-blue-600">Plantilla CloudFormation para multi-account con seguridad enterprise</a></li>
-        </ul>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-xl font-semibold mb-2">Consultoría AWS Nivel Enterprise</h2>
+        <h2 class="text-xl font-semibold mb-2">
+          Consultoría AWS Nivel Enterprise
+        </h2>
         <form class="space-y-4">
           <label class="block">
             <span class="text-gray-700">Seleccione servicio requerido</span>
-            <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <select
+              class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
               <option value="migracion-enterprise">Migración Enterprise</option>
-              <option value="arquitectura-serverless">Arquitectura Serverless</option>
+              <option value="arquitectura-serverless"
+                >Arquitectura Serverless</option
+              >
             </select>
           </label>
-          <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button
+            type="submit"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             Solicitar Propuesta
           </button>
         </form>
