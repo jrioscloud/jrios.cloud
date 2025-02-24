@@ -5,6 +5,11 @@ import Header from "../components/Header.astro";
 import MainPageServicesSection from "../components/main-page/MainPageServicesSection.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+
+const caseStudies = (await getCollection("caseStudies")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <!doctype html>
@@ -17,6 +22,81 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
     <MainPageHeroSection />
     <MainPageServicesSection />
+
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div class="container mx-auto px-6">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Case Studies</h2>
+          <p class="text-xl text-gray-600">
+            Nuestros proyectos exitosos y cómo transformamos negocios.
+          </p>
+        </div>
+        <!-- Case Studies Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            caseStudies.map((caseStudy) => {
+              return (
+                <a
+                  href={`#`}
+                  class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
+                >
+                  <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 md:pl-6">
+                      <div class="flex flex-wrap gap-2 mb-2">
+                        {/* {caseStudy.tags?.map((tag) => (
+                          <span class="px-2 py-1 bg-gray-200 text-gray-800 text-xs font-semibold rounded-full">
+                            {tag}
+                          </span>
+                        ))} */}
+                      </div>
+                      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        {caseStudy.data.title}
+                      </h3>
+                      <p class="text-gray-700 mb-2">
+                        {caseStudy.data.description}
+                      </p>
+                      <p class="text-sm text-gray-500 mb-4">
+                        {/* {caseStudy.data.details} */}
+                      </p>
+                      <ul class="text-sm text-gray-500 space-y-1">
+                        <li>
+                          <strong>Published:</strong>{" "}
+                          {new Date(
+                            caseStudy.data.pubDate,
+                          ).toLocaleDateString()}
+                        </li>
+                        {caseStudy.data.updatedDate && (
+                          <li>
+                            <strong>Updated:</strong>{" "}
+                            {new Date(
+                              caseStudy.data.updatedDate,
+                            ).toLocaleDateString()}
+                          </li>
+                        )}
+                        {/* <li>
+                          <strong>Duration:</strong>{" "}
+                          {
+                            // caseStudy.data.duration
+                          }
+                        </li>
+                        <li>
+                          <strong>Industry:</strong>{" "}
+                          {
+                            // caseStudy.data.industry
+                          }
+                        </li> */}
+                      </ul>
+                    </div>
+                  </div>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </section>
+
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
       <section class="mb-8">
         <h2 class="text-xl font-semibold mb-2">
