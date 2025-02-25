@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import CaseStudy from "../../layouts/CaseStudy.astro";
-import { render } from "astro:content"; // Esta importación es importante
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
     const caseStudies = await getCollection("caseStudies");
@@ -12,8 +12,8 @@ export async function getStaticPaths() {
 }
 type Props = { caseStudy: CollectionEntry<"caseStudies"> };
 
-const { caseStudy } = Astro.props; // Sí necesitamos destructurar aquí
-const { Content } = await render(caseStudy); // Usamos la función render importada
+const { caseStudy } = Astro.props;
+const { Content } = await render(caseStudy);
 ---
 
 <CaseStudy {...caseStudy.data}>
