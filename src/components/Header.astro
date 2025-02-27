@@ -6,25 +6,33 @@ import navLinks from "../data/nav-links.json";
 import TransparentButton from "./buttons/TransparentButton.astro";
 ---
 
-<header class="bg-white border-b border-gray-100">
-	<nav
-		class="container mx-auto px-4 py-1.5 flex items-center justify-between"
-	>
-		<h2 class="text-sm font-medium">
+<header
+	class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-100/70 z-50"
+>
+	<nav class="container mx-auto px-5 py-3 flex items-center justify-between">
+		<!-- Logo Section -->
+		<div class="flex items-center space-x-1.5">
+			<span
+				class="h-5 w-5 bg-gradient-to-br from-blue-600 to-blue-400 rounded-sm"
+			></span>
 			<a
 				href="/"
-				class="text-sm text-slate-800 hover:text-blue-600 transition-colors"
+				class="font-heading text-lg font-semibold text-slate-900 tracking-tight hover:text-blue-600 transition-colors"
 			>
-				{"Jaime Rios"}
+				Jaime Rios
+				<span class="text-blue-600 font-medium text-sm ml-1.5"
+					>// AWS Consulting</span
+				>
 			</a>
-		</h2>
+		</div>
 
-		<div class="internal-links hidden sm:flex space-x-1">
+		<!-- Navigation Links -->
+		<div class="hidden md:flex items-center space-x-6">
 			{
 				navLinks.map((link) => (
 					<HeaderLink
 						href={link.url}
-						class="text-sm text-gray-600 hover:text-blue-600 py-1 px-2"
+						class="text-[0.95rem] font-medium text-slate-700 hover:text-blue-600 px-3 py-2 rounded-md hover:bg-slate-50/50 transition-all"
 					>
 						{link.name}
 					</HeaderLink>
@@ -32,42 +40,56 @@ import TransparentButton from "./buttons/TransparentButton.astro";
 			}
 		</div>
 
-		<div class="flex items-center gap-1">
-			<div class="social-links hidden md:flex space-x-0.5">
+		<!-- CTA Section -->
+		<div class="flex items-center gap-4">
+			{/* Social Icons - More minimalist */}
+			<div class="hidden lg:flex items-center space-x-3">
 				{
 					socialLinks.map((link) => (
 						<a
 							href={link.url}
 							target="_blank"
-							class="text-gray-500 hover:text-blue-600 p-1.5"
+							class="text-slate-500 hover:text-blue-600 p-1.5 rounded-full hover:bg-slate-100/50 transition-colors"
+							aria-label={link.srText}
 						>
-							<span class="sr-only">{link.srText}</span>
 							<svg
-								viewBox="0 0 16 16"
-								aria-hidden="true"
+								viewBox="0 0 24 24"
 								width="20"
 								height="20"
+								class="fill-current"
 							>
-								<path fill="currentColor" d={link.svgPath} />
+								<path d={link.svgPath} />
 							</svg>
 						</a>
 					))
 				}
 			</div>
 
-			<div class="ml-2">
+			{/* Contact Button - More AWS-inspired */}
+			<div class="relative group">
+				<div
+					class="absolute -inset-0.5 bg-blue-600/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-1000"
+				>
+				</div>
 				<a
 					href="https://cal.com/jrioscloud/45min"
 					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-flex items-center
-                    px-3 py-1 text-xs
-                    border border-blue-600 rounded
-                    text-blue-600 hover:bg-blue-50
-                    transition-colors duration-200
-                    no-underline"
+					rel="noopener"
+					class="relative flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md"
 				>
-					<span>Contact</span>
+					<span>Emergency Contact</span>
+					<svg
+						class="ml-2 w-4 h-4"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+					</svg>
 				</a>
 			</div>
 		</div>
