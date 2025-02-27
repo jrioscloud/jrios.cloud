@@ -66,29 +66,34 @@ import TransparentButton from "./buttons/TransparentButton.astro";
 			</div>
 
 			{/* Contact Button - More AWS-inspired */}
-			<div class="relative group">
-				<div
-					class="absolute -inset-0.5 bg-blue-600/30 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-1000"
-				>
-				</div>
+
+			<div class="relative">
 				<a
 					href="https://cal.com/jrioscloud/45min"
 					target="_blank"
 					rel="noopener"
-					class="relative flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-sm hover:shadow-md"
+					class="flex items-center space-x-2 px-4 py-2.5
+               border border-slate-300/60 bg-white/90
+               text-slate-700 hover:text-blue-600
+               text-sm font-medium
+               rounded-lg
+               transition-all
+               hover:border-blue-500/80
+               hover:bg-slate-50/50
+               shadow-sm hover:shadow-md/5"
 				>
-					<span>Emergency Contact</span>
+					<span>Contact</span>
 					<svg
-						class="ml-2 w-4 h-4"
+						class="w-4 h-4 text-slate-500 hover:text-blue-600 transition-colors"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
+						stroke-width="1.8"
 					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
-							stroke-width="2"
-							d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+							d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
 					</svg>
 				</a>
 			</div>
