@@ -2,40 +2,42 @@
 import TransparentButton from "../buttons/TransparentButton.astro";
 ---
 
-<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow min-h-lvh">
-  <section class="">
-    <div class="container mx-auto px-4 max-w-5xl">
+<main
+  class="container mx-auto px-4 sm:px-5 lg:px-6 flex-grow min-h-screen flex flex-col justify-center"
+>
+  <section class="py-6 sm:py-8 md:py-10">
+    <div class="max-w-3xl mx-auto px-4">
       <h1
-        class="font-heading text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 mb-4 tracking-tight leading-none"
+        class="font-heading text-4xl xs:text-3xl sm:text-4xl md:text-[2.7rem] font-bold bg-gradient-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text mb-3 md:mb-5 leading-tight"
       >
-        Infrastructure That <span class="text-blue-600">Never Fails</span> When Everything
-        Else Does
+        Infrastructure That <span class="text-blue-600">Withstands Chaos</span>
       </h1>
 
       <h2
-        class="font-sans text-xl md:text-2xl font-medium text-gray-600 mb-6 leading-tight max-w-3xl"
+        class="font-sans text-base sm:text-lg md:text-xl font-medium text-gray-600 mb-4 md:mb-5 leading-tight max-w-2xl"
       >
-        AWS architecture that delivers when critical moments demand perfection
+        AWS architecture engineered for mission-critical operations
       </h2>
 
-      <div class="space-y-4 mb-10">
+      <div class="space-y-3 mb-6 md:mb-8">
         <p
-          class="font-sans text-lg text-gray-700 leading-relaxed pl-4 border-l-[3px] border-blue-500"
+          class="font-sans text-sm sm:text-base text-gray-700 leading-relaxed pl-3 border-l-2 sm:border-l-3 border-blue-500"
         >
-          When downtime costs thousands per minute, our meticulously crafted
-          solutions ensure uncompromising reliability.
-          <span class="block mt-2 text-sm font-medium text-blue-600">
-            Crisis-proof deployments • Production-validated designs •
-            Performance guarantees
+          When downtime equals lost revenue, our systems maintain 100% uptime.
+          <span
+            class="block mt-1.5 text-xs sm:text-sm font-medium text-blue-600"
+          >
+            Crisis-proof deployments • Battle-tested designs • SLA-backed
+            performance
           </span>
         </p>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 items-center">
+      <div class="flex flex-col xs:flex-row gap-3 items-start">
         <TransparentButton
           href="https://cal.com/jrioscloud/45min"
-          text="Schedule Strategic Consultation"
-          class="px-6 py-3 text-base font-sans"
+          text="Get Crisis Prevention Audit"
+          class="w-full xs:w-auto px-4 py-2.5 text-sm sm:text-base font-sans"
         />
       </div>
     </div>
