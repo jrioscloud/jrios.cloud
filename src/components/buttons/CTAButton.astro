@@ -1,0 +1,25 @@
+---
+// src/components/CTAButton.astro
+const { href } = Astro.props;
+---
+
+<a
+    href={href}
+    class="cta-button group inline-block px-8 py-3.5 text-lg font-semibold rounded-lg relative bg-transparent overflow-hidden transition-all duration-300 no-underline transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+>
+    <span
+        class="cta-button-text relative z-10 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent transition-all duration-300 group-hover:text-cyan-900 group-hover:scale-105"
+    >
+        <slot />
+    </span>
+    <span
+        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg transition-transform duration-500 group-hover:translate-y-[-100%]"
+    ></span>
+    <span
+        class="absolute inset-0.5 bg-white rounded-lg transition-opacity duration-300 group-hover:bg-opacity-0"
+    ></span>
+</a>
+
+<style>
+    /* Clases adicionales o estilos personalizados pueden ir aquí si es necesario */
+</style>

@@ -1,0 +1,35 @@
+---
+
+---
+
+<div
+    class="bg-gradient-to-r from-blue-600 to-cyan-500 p-px rounded-lg shadow-xl"
+>
+    <div class="bg-white rounded-lg p-6 space-y-4">
+        <slot />
+    </div>
+</div>
+
+<style>
+    :global(.astro-7:2) h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(to right, #2563eb, #06b6d4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+    }
+
+    :global(.astro-7:2) ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        color: #374151;
+        line-height: 1.6;
+    }
+
+    :global(.astro-7:2) li {
+        margin-bottom: 0.75rem;
+        padding-left: 0.5rem;
+    }
+</style>

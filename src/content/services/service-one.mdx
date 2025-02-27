@@ -7,6 +7,9 @@ pricing: '9997'
 implementationPricing: '24997'
 availabilityDate: 'March 15, 2025'
 ---
+import PriceBox from '../../components/PriceBox.astro';
+import GuaranteeBadge from '../../components/GuaranteeBadge.astro';
+import CTAButton from '../../components/buttons/CTAButton.astro'
 
 # Flash Sale Infrastructure Assurance™
 
@@ -63,11 +66,13 @@ Most AWS consultants offer:
 
 ## Investment and Value Proposition
 
-### The Premium Package: $9,997
-- Complete 3-phase assessment
-- Custom infrastructure fortification plan
-- Implementation-ready AWS CDK templates
-- 30-day post-assessment support
+<PriceBox>
+  ### The Premium Package: $9,997
+  - Complete 3-phase assessment
+  - Custom infrastructure fortification plan
+  - Implementation-ready AWS CDK templates
+  - 30-day post-assessment support
+</PriceBox>
 
 ### Value Delivered
 - Prevent $50,000-$250,000 in lost flash sale revenue
@@ -87,7 +92,7 @@ For businesses wanting a done-for-you solution:
 
 ## Ironclad Guarantee
 
-**The Double-Value Promise:**
+<GuaranteeBadge text="Double-Value Promise" />
 
 If our assessment fails to identify at least $20,000 in potential revenue protection opportunities, we'll refund your investment AND provide the implementation package at no cost.
 
@@ -113,8 +118,7 @@ The next available slot opens: **March 15, 2025**
 3. Choose self-implementation or our done-for-you service
 4. Enter your next flash sale with complete confidence
 
-[SCHEDULE RISK ASSESSMENT CALL]
-
+<CTAButton href="/schedule">SCHEDULE RISK ASSESSMENT CALL</CTAButton>
 ---
 
 *Flash Sale Infrastructure Assurance™ and Crisis Prevention Architecture™ are proprietary methodologies developed by jrioscloud.*
