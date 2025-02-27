@@ -3,41 +3,47 @@ import TransparentButton from "../buttons/TransparentButton.astro";
 ---
 
 <main
-  class="container mx-auto px-4 sm:px-5 lg:px-6 flex-grow min-h-screen flex flex-col justify-center"
+  class="container mx-auto px-4 sm:px-5 flex-grow min-h-screen flex flex-col justify-center"
 >
   <section class="py-6 sm:py-8 md:py-10">
-    <div class="max-w-3xl mx-auto px-4">
+    <div class="max-w-2xl mx-auto px-4">
       <h1
-        class="font-heading text-4xl xs:text-3xl sm:text-4xl md:text-[2.7rem] font-bold bg-gradient-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text mb-3 md:mb-5 leading-tight"
+        class="font-heading text-2xl xs:text-3xl sm:text-4xl md:text-[2.75rem] font-bold bg-gradient-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text mb-4 md:mb-6 leading-tight"
       >
-        Infrastructure That <span class="text-blue-600">Withstands Chaos</span>
+        <span class="text-blue-600">Zero-Fail</span> AWS Infrastructure<br
+          class="hidden sm:block"
+        />
+        <span class="text-2xl sm:text-3xl md:text-[2.15rem]"
+          >When Every Second Costs</span
+        >
       </h1>
 
-      <h2
-        class="font-sans text-base sm:text-lg md:text-xl font-medium text-gray-600 mb-4 md:mb-5 leading-tight max-w-2xl"
+      <p
+        class="font-sans text-lg sm:text-xl md:text-2xl text-gray-600 mb-5 md:mb-7 leading-tight mt-2"
       >
-        AWS architecture engineered for mission-critical operations
-      </h2>
+        Enterprise-grade reliability for critical workloads
+      </p>
 
       <div class="space-y-3 mb-6 md:mb-8">
-        <p
+        <div
           class="font-sans text-sm sm:text-base text-gray-700 leading-relaxed pl-3 border-l-2 sm:border-l-3 border-blue-500"
         >
-          When downtime equals lost revenue, our systems maintain 100% uptime.
-          <span
-            class="block mt-1.5 text-xs sm:text-sm font-medium text-blue-600"
+          <p>Guaranteed 100% uptime architecture</p>
+          <ul
+            class="mt-2 space-y-1 text-xs sm:text-sm font-medium text-blue-600 list-disc list-inside"
           >
-            Crisis-proof deployments • Battle-tested designs • SLA-backed
-            performance
-          </span>
-        </p>
+            <li>Disaster-proof deployments</li>
+            <li>Pentested environments</li>
+            <li>Financial SLA protection</li>
+          </ul>
+        </div>
       </div>
 
       <div class="flex flex-col xs:flex-row gap-3 items-start">
         <TransparentButton
           href="https://cal.com/jrioscloud/45min"
-          text="Get Crisis Prevention Audit"
-          class="w-full xs:w-auto px-4 py-2.5 text-sm sm:text-base font-sans"
+          text="Secure Your Architecture"
+          class="w-full xs:w-auto px-4 py-3 text-sm sm:text-base font-sans hover:scale-[1.02] transition-transform"
         />
       </div>
     </div>
