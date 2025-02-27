@@ -3,92 +3,73 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import socialLinks from "../data/social-links.json";
 import navLinks from "../data/nav-links.json";
+import TransparentButton from "./buttons/TransparentButton.astro";
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+<header class="bg-white border-b border-gray-100">
+	<nav
+		class="container mx-auto px-4 py-1.5 flex items-center justify-between"
+	>
+		<h2 class="text-sm font-medium">
+			<a
+				href="/"
+				class="text-sm text-slate-800 hover:text-blue-600 transition-colors"
+			>
+				{SITE_TITLE}
+			</a>
+		</h2>
+
+		<div class="internal-links hidden sm:flex space-x-1">
 			{
 				navLinks.map((link) => (
-					<HeaderLink href={link.url}>{link.name}</HeaderLink>
+					<HeaderLink
+						href={link.url}
+						class="text-sm text-gray-600 hover:text-blue-600 py-1 px-2"
+					>
+						{link.name}
+					</HeaderLink>
 				))
 			}
 		</div>
-		<div class="social-links">
-			{
-				socialLinks.map((link) => (
-					<a href={link.url} target="_blank">
-						<span class="sr-only">{link.srText}</span>
-						<svg
-							viewBox="0 0 16 16"
-							aria-hidden="true"
-							width="32"
-							height="32"
+
+		<div class="flex items-center gap-1">
+			<div class="social-links hidden md:flex space-x-0.5">
+				{
+					socialLinks.map((link) => (
+						<a
+							href={link.url}
+							target="_blank"
+							class="text-gray-500 hover:text-blue-600 p-1.5"
 						>
-							<path fill="currentColor" d={link.svgPath} />
-						</svg>
-					</a>
-				))
-			}
-		</div>
-		<div class="ml-4">
-			<a
-				href="https://cal.com/jrioscloud/45min"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="inline-flex items-center gap-2
-          px-4 py-2 rounded-full
-          bg-gradient-to-r from-blue-600 to-blue-700 text-white
-          text-sm font-medium
-          shadow-sm hover:shadow-md
-          transition-transform duration-300 hover:scale-105
-          no-underline
-          hover:underline decoration-white underline-offset-2"
-			>
-				<span>Contact</span>
-			</a>
+							<span class="sr-only">{link.srText}</span>
+							<svg
+								viewBox="0 0 16 16"
+								aria-hidden="true"
+								width="20"
+								height="20"
+							>
+								<path fill="currentColor" d={link.svgPath} />
+							</svg>
+						</a>
+					))
+				}
+			</div>
+
+			<div class="ml-2">
+				<a
+					href="https://cal.com/jrioscloud/45min"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center
+                    px-3 py-1 text-xs
+                    border border-blue-600 rounded
+                    text-blue-600 hover:bg-blue-50
+                    transition-colors duration-200
+                    no-underline"
+				>
+					<span>Contact</span>
+				</a>
+			</div>
 		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
