@@ -3,31 +3,58 @@ import socialLinks from "../data/social-links.json";
 const today = new Date();
 ---
 
-<footer class="border-t border-gray-200/80 mt-24 py-12 bg-white">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<p class="text-gray-500 text-sm mb-4">
-			&copy; {today.getFullYear()} Your name here. All rights reserved.
-		</p>
+<footer
+	class="border-t border-gray-200/80 py-10 md:py-12 bg-gradient-to-t from-white to-gray-50"
+>
+	<div class="container mx-auto px-4 sm:px-5">
+		<div class="max-w-2xl mx-auto text-center">
+			<div class="mb-6 md:mb-8">
+				<h3
+					class="font-heading text-xl sm:text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text mb-4 leading-tight"
+				>
+					Connect With Me
+				</h3>
 
-		<div class="social-links flex justify-center space-x-4">
-			{
-				socialLinks.map((link) => (
-					<a
-						href={link.url}
-						target="_blank"
-						class="text-gray-500 hover:text-cyan-600 transition-colors"
+				<div class="social-links flex justify-center space-x-4 mb-6">
+					{
+						socialLinks.map((link) => (
+							<a
+								href={link.url}
+								target="_blank"
+								class="text-gray-600 hover:text-blue-600 hover:scale-[1.05] transition-all"
+								aria-label={link.srText}
+							>
+								<span class="sr-only">{link.srText}</span>
+								<svg
+									viewBox="0 0 16 16"
+									aria-hidden="true"
+									class="w-6 h-6"
+								>
+									<path
+										fill="currentColor"
+										d={link.svgPath}
+									/>
+								</svg>
+							</a>
+						))
+					}
+				</div>
+
+				<div
+					class="pl-3 border-l-2 sm:border-l-3 border-blue-500 text-left mx-auto max-w-sm"
+				>
+					<p
+						class="font-sans text-sm sm:text-base text-gray-700 leading-relaxed"
 					>
-						<span class="sr-only">{link.srText}</span>
-						<svg
-							viewBox="0 0 16 16"
-							aria-hidden="true"
-							class="w-6 h-6"
-						>
-							<path fill="currentColor" d={link.svgPath} />
-						</svg>
-					</a>
-				))
-			}
+						Let's discuss how we can transform your cloud
+						infrastructure and prevent costly downtime.
+					</p>
+				</div>
+			</div>
+
+			<p class="font-sans text-gray-500 text-sm">
+				&copy; {today.getFullYear()} Your name here. All rights reserved.
+			</p>
 		</div>
 	</div>
 </footer>
