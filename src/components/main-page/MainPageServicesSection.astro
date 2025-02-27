@@ -26,10 +26,10 @@ const serviceOfferings = (await getCollection("serviceOfferings")).sort(
               class="bg-white p-8 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
             >
               <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 md:pl-6">
+                <div class="md:pl-6">
                   <div class="flex flex-wrap gap-2 mb-2">
                     {/* {caseStudy.tags?.map((tag) => (
-                          <span class="px-2 py-1 bg-gray-200 text-gray-800 text-xs font-semibold rounded-full">
+                          <span class="px-2 py-1 bg-gray-200 text-slate-800 text-xs font-semibold rounded-full">
                             {tag}
                           </span>
                         ))} */}
@@ -45,17 +45,9 @@ const serviceOfferings = (await getCollection("serviceOfferings")).sort(
                   </p>
                   <ul class="text-sm text-gray-500 space-y-1">
                     <li>
-                      <strong>Published:</strong>{" "}
+                      <strong>Next Available Slot:</strong>{" "}
                       {new Date(serviceOffer.data.pubDate).toLocaleDateString()}
                     </li>
-                    {serviceOffer.data.updatedDate && (
-                      <li>
-                        <strong>Updated:</strong>{" "}
-                        {new Date(
-                          serviceOffer.data.updatedDate,
-                        ).toLocaleDateString()}
-                      </li>
-                    )}
                     {/* <li>
                           <strong>Duration:</strong>{" "}
                           {

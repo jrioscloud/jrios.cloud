@@ -3,45 +3,31 @@ import socialLinks from "../data/social-links.json";
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
-	<div class="social-links">
-		{
-			socialLinks.map((link) => (
-				<a href={link.url} target="_blank">
-					<span class="sr-only">{link.srText}</span>
-					<svg
-						viewBox="0 0 16 16"
-						aria-hidden="true"
-						width="32"
-						height="32"
-						astro-icon={`social/${link.name.toLowerCase()}`}
+<footer class="border-t border-gray-200/80 mt-24 py-12 bg-white">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<p class="text-gray-500 text-sm mb-4">
+			&copy; {today.getFullYear()} Your name here. All rights reserved.
+		</p>
+
+		<div class="social-links flex justify-center space-x-4">
+			{
+				socialLinks.map((link) => (
+					<a
+						href={link.url}
+						target="_blank"
+						class="text-gray-500 hover:text-cyan-600 transition-colors"
 					>
-						<path fill="currentColor" d={link.svgPath} />
-					</svg>
-				</a>
-			))
-		}
+						<span class="sr-only">{link.srText}</span>
+						<svg
+							viewBox="0 0 16 16"
+							aria-hidden="true"
+							class="w-6 h-6"
+						>
+							<path fill="currentColor" d={link.svgPath} />
+						</svg>
+					</a>
+				))
+			}
+		</div>
 	</div>
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>
