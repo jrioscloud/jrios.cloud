@@ -41,13 +41,13 @@ const caseStudies = (await getCollection("caseStudies")).sort(
 
                         <!-- Key Features -->
                         {caseStudy.data.keyFeatures && (
-                            <ul class="space-y-3.5">
+                            <ul class="space-y-2.5">
                                 {caseStudy.data.keyFeatures.map((feature) => (
                                     <li class="flex items-start space-x-2.5">
-                                        <svg class="w-4.5 h-4.5 mt-1.5 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="none">
-                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg class="w-4 h-4 mt-1 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                        <span class="font-sans text-sm md:text-[0.95rem] text-slate-700/90 leading-relaxed">
+                                        <span class="font-sans text-sm md:text-[0.925rem] text-slate-700/90 leading-snug">
                                             {feature}
                                         </span>
                                     </li>
