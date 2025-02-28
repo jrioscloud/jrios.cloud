@@ -24,33 +24,87 @@ const serviceOfferings = (await getCollection("serviceOfferings")).sort(
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {
         serviceOfferings.map((serviceOffer) => {
+          const isEmergency = serviceOffer.data.serviceType === "emergency";
+          const isPackage = serviceOffer.data.serviceType === "package";
+          const cardColor = isEmergency
+            ? "red"
+            : isPackage
+              ? "emerald"
+              : "blue";
+
           return (
             <a
-              href={`/services/${serviceOffer.id}`}
-              class="bg-white p-6 md:p-7 rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:border-blue-500 hover:scale-[1.01]"
+              href={serviceOffer.data.ctaLink || `/services/${serviceOffer.id}`}
+              class={`bg-${cardColor}-50 border-${cardColor}-100 hover:border-${cardColor}-500 p-6 md:p-7 rounded-lg border shadow-lg hover:shadow-xl transition-all hover:scale-[1.01]`}
             >
-              <div class="flex flex-col">
-                <h3 class="font-heading font-semibold text-blue-600 mb-3">
+              <div class="flex flex-col h-full">
+                <h3
+                  class={`font-heading font-semibold text-${cardColor}-600 mb-3`}
+                >
                   {serviceOffer.data.title}
                 </h3>
                 <p class="font-sans text-base text-gray-700 mb-4 leading-relaxed">
                   {serviceOffer.data.description}
                 </p>
-                <div class="pl-3 border-l-2 border-blue-500 mt-auto">
+
+                {serviceOffer.data.features && (
+                  <ul class="list-disc ml-5 mb-4 text-gray-700 space-y-1">
+                    {serviceOffer.data.features.map((feature) => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                )}
+
+                <div class={`pl-3 border-l-2 border-${cardColor}-500 mt-auto`}>
                   <ul class="font-sans text-sm text-gray-600 space-y-2">
-                    <li>
-                      <strong>Next Available:</strong>{" "}
-                      {new Date(serviceOffer.data.pubDate).toLocaleDateString()}
-                    </li>
-                    {/* Uncomment and use these when the data is available
-                    <li>
-                      <strong>Duration:</strong> {serviceOffer.data.duration}
-                    </li>
-                    <li>
-                      <strong>Industry:</strong> {serviceOffer.data.industry}
-                    </li> */}
+                    {serviceOffer.data.packageValue && (
+                      <li>
+                        <strong>Package Value:</strong> $
+                        {serviceOffer.data.packageValue.toLocaleString()}
+                        {serviceOffer.data.implementationPricing &&
+                          ` (Assessment) | ${serviceOffer.data.implementationPricing} (Implementation)`}
+                      </li>
+                    )}
+                    {serviceOffer.data.pricing &&
+                      !serviceOffer.data.packageValue && (
+                        <li>
+                          <strong>Price:</strong> {serviceOffer.data.pricing}
+                        </li>
+                      )}
+
+                    {serviceOffer.data.availabilityDate &&
+                    serviceOffer.data.availableSlots ? (
+                      <li>
+                        <strong>Next Available:</strong>{" "}
+                        {serviceOffer.data.availabilityDate}
+                        {serviceOffer.data.availableSlots > 0 &&
+                          ` (${serviceOffer.data.availableSlots} slots remaining)`}
+                      </li>
+                    ) : serviceOffer.data.availabilityLimit ? (
+                      <li>
+                        <strong>Availability:</strong>{" "}
+                        {serviceOffer.data.availabilityLimit}
+                      </li>
+                    ) : (
+                      <li>
+                        <strong>Next Available:</strong>{" "}
+                        {new Date(
+                          serviceOffer.data.pubDate,
+                        ).toLocaleDateString()}
+                      </li>
+                    )}
                   </ul>
                 </div>
+
+                {serviceOffer.data.ctaText && (
+                  <div class="mt-5 text-center">
+                    <span
+                      class={`inline-block py-2 px-4 rounded-md font-medium bg-${cardColor}-600 hover:bg-${cardColor}-700 text-white transition-colors`}
+                    >
+                      {serviceOffer.data.ctaText}
+                    </span>
+                  </div>
+                )}
               </div>
             </a>
           );

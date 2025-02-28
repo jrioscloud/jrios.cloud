@@ -23,6 +23,7 @@ const caseStudies = defineCollection({
 	}),
 });
 
+
 const serviceOfferings = defineCollection({
 	loader: glob({ base: './src/content/services', pattern: '**/*.{md,mdx}' }),
 	schema: z.object({
@@ -31,6 +32,19 @@ const serviceOfferings = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		// New fields for enhanced service information
+		serviceType: z.enum(['standard', 'emergency', 'package']).optional(),
+		pricing: z.string().optional(),
+		packageValue: z.number().optional(),
+		implementationPricing: z.string().optional(),
+		minimumHours: z.number().optional(),
+		availabilityLimit: z.string().optional(),
+		availabilityDate: z.string().optional(),
+		availableSlots: z.number().optional(),
+		features: z.array(z.string()).optional(),
+		ctaText: z.string().optional(),
+		ctaLink: z.string().optional(),
+		productType: z.string().optional(),
 	}),
 });
 
