@@ -12,6 +12,7 @@ const blog = defineCollection({
 		heroImage: z.string().optional(),
 	}),
 });
+
 const caseStudies = defineCollection({
 	loader: glob({ base: './src/content/case-studies', pattern: '**/*.{md,mdx}' }),
 	schema: z.object({
@@ -20,9 +21,16 @@ const caseStudies = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		// New fields for enhanced case study information
+		challenges: z.array(z.string()).optional(),
+		keyFeatures: z.array(z.string()).optional(),
+		result: z.string().optional(),
+		industry: z.string().optional(),
+		client: z.string().optional(),
+		duration: z.string().optional(),
+		impactMetric: z.string().optional(),
 	}),
 });
-
 
 const serviceOfferings = defineCollection({
 	loader: glob({ base: './src/content/services', pattern: '**/*.{md,mdx}' }),
