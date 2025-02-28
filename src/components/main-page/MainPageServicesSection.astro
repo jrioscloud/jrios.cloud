@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-
+import ServiceOfferCard from "../ServiceOfferCard.astro";
 const serviceOfferings = (await getCollection("serviceOfferings")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -10,124 +10,37 @@ const serviceOfferings = (await getCollection("serviceOfferings")).sort(
   <div class="container mx-auto px-4 sm:px-5">
     <!-- Header Section -->
     <div class="max-w-3xl mx-auto text-center mb-10 md:mb-14 space-y-3">
-      <h2 class="font-heading text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-slate-900 tracking-tight leading-tight">
+      <h2
+        class="font-heading text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-slate-900 tracking-tight leading-tight"
+      >
         Operational <span class="text-blue-600">Excellence</span>
       </h2>
-      <p class="font-sans text-lg md:text-xl text-slate-600/90 leading-relaxed max-w-2xl mx-auto">
+      <p
+        class="font-sans text-lg md:text-xl text-slate-600/90 leading-relaxed max-w-2xl mx-auto"
+      >
         Mission-critical support for cloud infrastructure at scale
       </p>
     </div>
 
     <!-- Services Grid -->
-    <div class={`${serviceOfferings.length === 1 ? 'flex justify-center' : 'grid md:grid-cols-2 xl:grid-cols-3'} gap-8 md:gap-10`}>
-      {serviceOfferings.map((serviceOffer) => {
+    <div
+      class={`${serviceOfferings.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 xl:grid-cols-3"} gap-8 md:gap-10`}
+    >
+      {
+        serviceOfferings.map((serviceOffer) => {
           const isEmergency = serviceOffer.data.serviceType === "emergency";
           const isPackage = serviceOffer.data.serviceType === "package";
-          const colorScheme = isEmergency ? 'red' : isPackage ? 'emerald' : 'blue';
+          const colorScheme = isEmergency
+            ? "red"
+            : isPackage
+              ? "emerald"
+              : "blue";
 
           return (
-            <a
-              href={serviceOffer.data.ctaLink || `/services/${serviceOffer.id}`}
-              class={`group relative bg-white p-7 md:p-8 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md
-                     transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-                     ${serviceOfferings.length === 1 ? 'max-w-2xl w-full' : 'h-full'}
-                     hover:border-${colorScheme}-400/50 hover:-translate-y-0.5`}
-            >
-              <!-- Color Accent -->
-              <div class={`absolute top-0 left-0 w-full h-1.5 rounded-t-xl bg-${colorScheme}-500/80`}></div>
-
-              <div class="flex flex-col h-full space-y-5 pt-2">
-                <!-- Title Section -->
-                <div class="space-y-4">
-                  <h3 class={`font-heading text-xl md:text-2xl font-semibold text-${colorScheme}-700 leading-tight`}>
-                    {serviceOffer.data.title}
-                  </h3>
-                  <p class="font-sans text-base md:text-[0.97rem] text-slate-600/90 leading-relaxed">
-                    {serviceOffer.data.description}
-                  </p>
-                </div>
-
-                <!-- Features List -->
-                {serviceOffer.data.features && (
-                  <ul class="space-y-2.5">
-                    {serviceOffer.data.features.map((feature) => (
-                      <li class="flex items-start space-x-2.5">
-                        <svg class={`w-4 h-4 mt-1 text-${colorScheme}-600 shrink-0`} viewBox="0 0 24 24" fill="none">
-                          <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span class="font-sans text-sm md:text-[0.925rem] text-slate-700/90 leading-snug">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <!-- Pricing Metadata -->
-                <div class="mt-auto pt-6 space-y-4 border-t border-slate-100/80">
-                  <dl class="grid grid-cols-2 gap-4">
-                    {serviceOffer.data.packageValue ? (
-                      <div class="col-span-2">
-                        <dt class="font-sans text-xs font-medium uppercase tracking-wide text-slate-500 mb-1.5">
-                          Investment
-                        </dt>
-                        <dd class="font-sans text-sm text-slate-700 leading-tight">
-                          ${serviceOffer.data.packageValue.toLocaleString()}
-                          {serviceOffer.data.implementationPricing && 
-                            ` (Assessment) | ${serviceOffer.data.implementationPricing} (Implementation)`}
-                        </dd>
-                      </div>
-                    ) : serviceOffer.data.pricing && (
-                      <div class="col-span-2">
-                        <dt class="font-sans text-xs font-medium uppercase tracking-wide text-slate-500 mb-1.5">
-                          Pricing
-                        </dt>
-                        <dd class="font-sans text-sm text-slate-700 leading-tight">
-                          {serviceOffer.data.pricing}
-                        </dd>
-                      </div>
-                    )}
-
-                    <div class="col-span-2">
-                      <dt class="font-sans text-xs font-medium uppercase tracking-wide text-slate-500 mb-1.5">
-                        Availability
-                      </dt>
-                      <dd class="font-sans text-sm text-slate-700 leading-tight">
-                        {serviceOffer.data.availabilityDate ? (
-                          <>
-                            {serviceOffer.data.availabilityDate}
-                            {(serviceOffer.data.availableSlots ?? 0) > 0  &&
-                              ` (${serviceOffer.data.availableSlots} slots)`}
-                          </>
-                        ) : serviceOffer.data.availabilityLimit ? (
-                          serviceOffer.data.availabilityLimit
-                        ) : (
-                          new Date(serviceOffer.data.pubDate).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                          })
-                        )}
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-
-                <!-- CTA Button -->
-                {serviceOffer.data.ctaText && (
-                  <div class="mt-4">
-                    <span class={`inline-flex items-center justify-center w-full py-2.5 px-5 rounded-lg border border-${colorScheme}-500/40 bg-white text-${colorScheme}-700 hover:bg-${colorScheme}-50/50 transition-colors font-medium text-sm`}>
-                      {serviceOffer.data.ctaText}
-                      <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                      </svg>
-                    </span>
-                  </div>
-                )}
-              </div>
-            </a>
+            <ServiceOfferCard {serviceOffer} {colorScheme} {serviceOfferings} />
           );
-        })}
+        })
+      }
     </div>
   </div>
 </section>
