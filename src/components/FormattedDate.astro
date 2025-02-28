@@ -8,7 +8,10 @@ const { date } = Astro.props;
 const formattedDate = date ? new Date(date) : new Date();
 ---
 
-<time datetime={formattedDate.toISOString()}>
+<time
+	class="bg-slate-50 px-3 py-1.5 rounded-full"
+	datetime={formattedDate.toISOString()}
+>
 	{
 		formattedDate.toLocaleDateString("en-us", {
 			year: "numeric",
