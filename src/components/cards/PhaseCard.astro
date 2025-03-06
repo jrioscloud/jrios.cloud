@@ -1,0 +1,197 @@
+---
+// Import any necessary components
+---
+
+<div class="mt-8">
+    <div
+        class="relative bg-white p-8 rounded-2xl border border-slate-200/80 shadow-lg"
+    >
+        {/* Vertical Timeline Line */}
+        <div class="absolute left-8 top-10 bottom-10 w-0.5 bg-slate-100"></div>
+
+        {/* Timeline Items */}
+        <div class="space-y-10">
+            {/* Phase 1 */}
+            <div class="relative pl-12">
+                <div
+                    class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center"
+                >
+                    <span class="text-white font-semibold text-sm">1</span>
+                </div>
+                <h3
+                    class="font-heading text-xl font-semibold text-slate-900 mb-3"
+                >
+                    Pressure-Point Diagnosis
+                </h3>
+                <ul class="space-y-2.5">
+                    {
+                        [
+                            "Infrastructure deep-dive assessment",
+                            "Traffic pattern analysis",
+                            "Vulnerability identification",
+                        ].map((feature) => (
+                            <li class="flex items-start space-x-2.5">
+                                <svg
+                                    class="w-4 h-4 mt-1 text-blue-600 shrink-0"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M20 6L9 17L4 12"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span class="font-sans text-sm text-slate-700/90 leading-snug">
+                                    {feature}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="mt-4">
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                    >
+                        Week 1
+                    </span>
+                </div>
+            </div>
+
+            {/* Phase 2 */}
+            <div class="relative pl-12">
+                <div
+                    class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center"
+                >
+                    <span class="text-white font-semibold text-sm">2</span>
+                </div>
+                <h3
+                    class="font-heading text-xl font-semibold text-slate-900 mb-3"
+                >
+                    Load Simulation Testing
+                </h3>
+                <ul class="space-y-2.5">
+                    {
+                        [
+                            "Custom event traffic modeling",
+                            "Real-world crisis simulation",
+                            "Breaking-point determination",
+                        ].map((feature) => (
+                            <li class="flex items-start space-x-2.5">
+                                <svg
+                                    class="w-4 h-4 mt-1 text-blue-600 shrink-0"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M20 6L9 17L4 12"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span class="font-sans text-sm text-slate-700/90 leading-snug">
+                                    {feature}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="mt-4">
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                    >
+                        Week 2
+                    </span>
+                </div>
+            </div>
+
+            {/* Phase 3 */}
+            <div class="relative pl-12">
+                <div
+                    class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center"
+                >
+                    <span class="text-white font-semibold text-sm">3</span>
+                </div>
+                <h3
+                    class="font-heading text-xl font-semibold text-slate-900 mb-3"
+                >
+                    Fortification Blueprint
+                </h3>
+                <ul class="space-y-2.5">
+                    {
+                        [
+                            "Custom scaling strategy development",
+                            "Database optimization recommendations",
+                            "Multi-region failover design",
+                        ].map((feature) => (
+                            <li class="flex items-start space-x-2.5">
+                                <svg
+                                    class="w-4 h-4 mt-1 text-blue-600 shrink-0"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M20 6L9 17L4 12"
+                                        stroke="currentColor"
+                                        stroke-width="1.75"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span class="font-sans text-sm text-slate-700/90 leading-snug">
+                                    {feature}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="mt-4">
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                    >
+                        Week 3
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {/* Guaranteed Results */}
+    <div class="mt-8 p-8 rounded-2xl bg-blue-50/50 border border-blue-100">
+        <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+                <svg
+                    class="w-6 h-6 text-blue-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                >
+                    <path
+                        d="M12 16V12M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div>
+                <h4
+                    class="font-heading text-xl font-semibold text-slate-900 mb-2"
+                >
+                    Guaranteed Results
+                </h4>
+                <p
+                    class="font-sans text-base text-slate-700/90 leading-relaxed"
+                >
+                    If our assessment fails to identify at least $20,000 in
+                    potential revenue protection opportunities, we'll refund
+                    your investment AND provide the implementation package at no
+                    cost.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
