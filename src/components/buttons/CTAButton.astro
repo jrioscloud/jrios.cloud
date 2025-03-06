@@ -1,25 +1,21 @@
 ---
-// src/components/CTAButton.astro
-const { href } = Astro.props;
+// components/CTAButton.astro
+const { href, text, variant = "default" } = Astro.props;
 ---
 
 <a
     href={href}
-    class="cta-button group inline-block px-8 py-3.5 text-lg font-semibold rounded-lg relative bg-transparent overflow-hidden transition-all duration-300 no-underline transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+    class={`inline-flex items-center px-8 py-3.5 space-x-3 border rounded-xl transition-all duration-300 hover:scale-[1.015] shadow-md hover:shadow-lg no-underline ${
+        variant === "cta"
+            ? "bg-gradient-to-r from-cyan-500 to-cyan-600 border-cyan-600 hover:bg-gradient-to-br hover:from-cyan-600 hover:to-cyan-700 hover:border-cyan-700"
+            : "bg-gradient-to-r from-white to-gray-50 border-gray-300/80 hover:border-cyan-300 hover:bg-gradient-to-br"
+    }`}
 >
     <span
-        class="cta-button-text relative z-10 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent transition-all duration-300 group-hover:text-cyan-900 group-hover:scale-105"
+        class={`font-medium text-lg no-underline transition-colors ${
+            variant === "cta" ? "text-white" : "text-gray-900"
+        }`}
     >
-        <slot />
+        {text}
     </span>
-    <span
-        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg transition-transform duration-500 group-hover:translate-y-[-100%]"
-    ></span>
-    <span
-        class="absolute inset-0.5 bg-white rounded-lg transition-opacity duration-300 group-hover:bg-opacity-0"
-    ></span>
 </a>
-
-<style>
-    /* Clases adicionales o estilos personalizados pueden ir aquí si es necesario */
-</style>
