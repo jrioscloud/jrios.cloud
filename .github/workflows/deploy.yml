@@ -25,8 +25,13 @@ jobs:
           node-version: 20
           cache: 'npm'
       
-      - name: Install modules
+      # Paso nuevo para limpieza completa
+      - name: Clean installation
         run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm install --force
+          rm -rf node_modules
           npm install --force
       
       - name: Build application
