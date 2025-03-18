@@ -30,7 +30,8 @@ jobs:
         run: |
           rm -rf node_modules
           rm -f package-lock.json
-          npm install --force
+          npm install --force --include=optional
+          npm rebuild --update-binary
           rm -rf node_modules
           npm install --force
       
