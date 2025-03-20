@@ -21,6 +21,22 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
           BlinkMacSystemFont, sans-serif;
         --font-heading: "Merriweather", Georgia, serif;
       }
+
+      /* Global word break rules */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      li,
+      a,
+      span,
+      div {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
     </style>
   </head>
 
@@ -33,10 +49,10 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="max-w-3xl mx-auto">
           <div
-            class="prose prose-sm md:prose-base max-w-none text-gray-700/90 space-y-6 font-sans leading-snug"
+            class="prose prose-sm md:prose-base max-w-none text-gray-700/90 space-y-6 font-sans leading-snug [word-break:keep-all] [overflow-wrap:break-word]"
           >
             <div
-              class="[&_h2]:font-heading [&_h3]:font-heading [&_h4]:font-heading space-y-6 [&_ul]:space-y-3 [&_li]:text-sm [&_li]:md:text-[0.925rem]"
+              class="[&_h2]:font-heading [&_h3]:font-heading [&_h4]:font-heading space-y-6 [&_ul]:space-y-3 [&_li]:text-sm [&_li]:md:text-[0.925rem] [&_*]:!break-words [&_*]:!word-break:keep-all"
             >
               <slot />
             </div>

@@ -22,6 +22,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                     BlinkMacSystemFont, sans-serif;
                 --font-heading: "Merriweather", Georgia, serif;
             }
+
+            /* Global word break rules */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            li,
+            a,
+            span,
+            div {
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
         </style>
     </head>
 
@@ -76,7 +92,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
                     {/* Main Title */}
                     <h1
-                        class="text-2xl md:text-3xl font-bold text-slate-900 text-center leading-tight mb-6"
+                        class="text-2xl md:text-3xl font-bold text-slate-900 text-center leading-tight mb-6 [word-break:keep-all] [overflow-wrap:break-word]"
                     >
                         {title}
                     </h1>
@@ -86,12 +102,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
                     {/* Content Container */}
                     <div
-                        class="prose prose-sm md:prose-base max-w-none text-gray-700/90 space-y-6 font-sans leading-snug"
+                        class="prose prose-sm md:prose-base max-w-none text-gray-700/90 space-y-6 font-sans leading-snug [word-break:keep-all] [overflow-wrap:break-word]"
                     >
                         {/* Description */}
                         {
                             description && (
-                                <p class="text-base md:text-[0.97rem] text-gray-600/90 leading-relaxed mb-6">
+                                <p class="text-base md:text-[0.97rem] text-gray-600/90 leading-relaxed mb-6 [word-break:keep-all] [overflow-wrap:break-word]">
                                     {description}
                                 </p>
                             )
@@ -99,7 +115,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
                         {/* MDX Content */}
                         <div
-                            class="[&_h2]:font-heading [&_h3]:font-heading [&_h4]:font-heading space-y-6 [&_ul]:space-y-3 [&_li]:text-sm [&_li]:md:text-[0.925rem]"
+                            class="[&_h2]:font-heading [&_h3]:font-heading [&_h4]:font-heading space-y-6 [&_ul]:space-y-3 [&_li]:text-sm [&_li]:md:text-[0.925rem] [&_*]:!break-words [&_*]:!word-break:keep-all"
                         >
                             <slot />
                         </div>

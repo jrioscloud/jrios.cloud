@@ -34,6 +34,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
+				word-break: keep-all;
+				overflow-wrap: break-word;
 			}
 			.title {
 				margin-bottom: 1em;
@@ -43,6 +45,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				word-break: keep-all;
+				overflow-wrap: break-word;
 			}
 			.date {
 				margin-bottom: 0.5em;
