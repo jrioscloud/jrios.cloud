@@ -1,5 +1,3 @@
-# CRISIS-PROOF COMMERCE MANIFESTO  
-
 ## THE REVOLUTION AGAINST DIGITAL FRAGILITY
 
 Modern e-commerce operates on a fundamental lie: that technology should limit business ambition.  
