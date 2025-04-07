@@ -1,5 +1,9 @@
+---
+import CTAButton from "../buttons/CTAButton.astro";
+---
+
 <div
-    class="bg-gradient-to-br from-white to-slate-50 rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
+    class="bg-gradient-to-br mt-28 from-white to-slate-50 rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 group"
 >
     <div class="flex flex-col md:flex-row gap-4 items-start">
         {/* <!-- Icon Container --> */}
@@ -20,7 +24,7 @@
             </svg>
         </div>
 
-        {/* <!-- Content --> */}
+        {/* <!-- Original Content --> */}
         <div class="space-y-3">
             <div class="space-y-1.5">
                 <h3
@@ -80,21 +84,47 @@
                     <span
                         class="text-slate-800 text-[14px] tracking-tight leading-tight"
                     >
-                        Full refund + free implementation package
+                        Full refund
                     </span>
                 </li>
             </ul>
         </div>
     </div>
 
-    {/* <!-- Availability Badge --> */}
-    <div class="mt-4 pt-4 border-t border-slate-200">
-        <p
-            class="text-[12px] font-medium text-slate-600 tracking-tight mb-0 pb-0"
-        >
-            Next available: <span class="text-blue-600 font-semibold"
-                >March 15, 2025</span
+    {/* <!-- New Content Section --> */}
+    <div class="mt-6 pt-6 border-t border-slate-200 space-y-4">
+        <div class="space-y-2">
+            <h4
+                class="text-[13px] font-semibold text-slate-800 tracking-wide uppercase"
             >
-        </p>
+                Limited Availability
+            </h4>
+            <p class="text-slate-800 text-[14px] leading-tight tracking-tight">
+                Due to our deep-dive approach, we only accept <strong
+                    class="font-semibold text-blue-600"
+                    >3 clients per month</strong
+                > for Flash Sale Infrastructure Assurance™.
+            </p>
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-slate-800">
+            <span class="font-medium">Next available slot opens:</span>
+            <span class="font-semibold text-blue-600">March 15, 2025</span>
+        </div>
+    </div>
+
+    {/* <!-- CTA Button Section --> */}
+    <div class="mt-6 pt-6 border-t border-slate-200">
+        <div class="flex flex-col items-center space-y-4">
+            <p class="text-sm text-slate-700 text-center font-medium">
+                Secure your priority access before next month's slots fill
+            </p>
+            <CTAButton
+                href="https://cal.com/jrioscloud/45min"
+                text="Book Strategy Call"
+                variant="cta"
+                class="w-full md:w-auto"
+            />
+        </div>
     </div>
 </div>

@@ -5,49 +5,138 @@ import TransparentButton from "../buttons/TransparentButton.astro";
 <main
   class="container mx-auto px-4 sm:px-5 flex-grow min-h-screen flex flex-col justify-center"
 >
-  <section class="py-6 sm:py-8 md:py-10">
-    <div class="max-w-2xl mx-auto px-4">
-      <h1
-        class="font-heading text-2xl xs:text-3xl sm:text-4xl md:text-[2.75rem] font-bold bg-gradient-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text mb-4 md:mb-6 leading-tight"
-      >
-        <span class="text-blue-600">Zero-Fail</span> AWS Infrastructure<br
-          class="hidden sm:block"
-        />
-        <span class="text-2xl sm:text-3xl md:text-[2.15rem]"
-          >When Every Minute of Downtime Costs $5,000+ per minute</span
+  <section class="py-8 sm:py-12 md:py-16">
+    <div class="max-w-2xl mx-auto px-4 space-y-8 md:space-y-12">
+      <!-- Title Section -->
+      <div class="space-y-4 md:space-y-6">
+        <h1
+          class="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-[3.5rem] font-bold text-slate-900 mb-2 md:mb-4 leading-tight tracking-tight"
         >
-      </h1>
-
-      <p
-        class="font-sans text-lg sm:text-xl md:text-2xl text-gray-600 mb-5 md:mb-7 leading-tight mt-2"
-      >
-        AWS-Certified Solutions Architect who rescued critical enterprise
-        deployments after 14+ hours of infrastructure failure
-      </p>
-
-      <div class="space-y-3 mb-6 md:mb-8">
-        <div
-          class="font-sans text-sm sm:text-base text-gray-700 leading-relaxed pl-3 border-l-2 sm:border-l-3 border-blue-500"
-        >
-          <p>
-            Crisis Prevention Architecture™ methodology developed in
-            high-stakes production environments
-          </p>
-          <ul
-            class="mt-2 space-y-1 text-xs sm:text-sm font-medium text-blue-600 list-disc list-inside"
+          <span
+            class="bg-gradient-to-r xs:text-md sm:text-md from-blue-600 to-blue-500 text-transparent bg-clip-text text-pretty break-keep"
           >
-            <li>Fixed-price architecture audit ($3,500)</li>
-            <li>Production crisis insurance</li>
-            <li>Implementation packages from $15,000</li>
+            Zero-Fail Infrastructure Assurance
+          </span>
+        </h1>
+
+        <h2
+          class="font-heading text-lg sm:text-xl md:text-2xl lg:text-[2rem] text-slate-800 leading-tight font-semibold"
+        >
+          When Downtime Costs You<br class="hidden sm:block" />
+          <span class="text-blue-600">$5,000+</span> Per Minute
+        </h2>
+      </div>
+
+      <!-- Value Proposition -->
+      <div class="space-y-6 md:space-y-8">
+        <!-- Core Message -->
+        <div
+          class="font-sans text-base sm:text-lg text-slate-700 leading-relaxed space-y-4"
+        >
+          <p
+            class="border-l-4 border-blue-500 pl-4 sm:pl-6 py-2 bg-blue-50/50 rounded-r-lg break-words"
+          >
+            I architect <strong class="font-semibold text-blue-600 break-words"
+              >bulletproof AWS infrastructure</strong
+            > for e-commerce businesses handling 10× traffic spikes - preventing
+            site outages and slow page loads during critical sales events.
+          </p>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="space-y-4 md:space-y-5">
+          <div
+            class="flex items-center gap-2 text-sm font-medium text-blue-600 uppercase tracking-wide"
+          >
+            <div class="w-4 h-px bg-blue-500"></div>
+            <span>Your Financial Safeguards</span>
+          </div>
+
+          <ul class="space-y-4 sm:space-y-5">
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 mt-1 w-5 h-5 bg-blue-600/10 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-3 h-3 text-blue-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span
+                class="font-sans text-sm sm:text-base text-slate-700 leading-snug break-words"
+              >
+                <strong class="font-semibold">Revenue Shield:</strong> Prevent $5k-$15k/min
+                losses from abandoned carts during outages
+              </span>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 mt-1 w-5 h-5 bg-blue-600/10 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-3 h-3 text-blue-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span
+                class="font-sans text-sm sm:text-base text-slate-700 leading-snug break-words"
+              >
+                <strong class="font-semibold">Crisis Prevention:</strong> Battle-tested
+                systems that handle viral traffic surges
+              </span>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 mt-1 w-5 h-5 bg-blue-600/10 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-3 h-3 text-blue-600"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M20 6L9 17L4 12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span
+                class="font-sans text-sm sm:text-base text-slate-700 leading-snug break-words"
+              >
+                <strong class="font-semibold">24/7 Peace:</strong> Sleep through
+                flash sales knowing your infrastructure won't trend on Twitter
+              </span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="flex flex-col xs:flex-row gap-3 items-start">
+      <!-- CTA Section -->
+      <div class="pt-4 md:pt-6">
         <TransparentButton
           href="https://cal.com/jrioscloud/45min"
-          text="Book Crisis Prevention Assessment"
-          class="w-full xs:w-auto px-4 py-3 text-sm sm:text-base font-sans hover:scale-[1.02] transition-transform"
+          text="Book Strategy Call"
+          class="w-full sm:w-auto px-6 py-4 text-base sm:text-lg font-semibold hover:scale-[1.02] transition-transform shadow-sm hover:shadow-md"
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/Page.astro";
-import CaseStudyCard from "../../components/CaseStudyCard.astro";
+import CaseStudyCard from "../../components/cards/CaseStudyCard.astro";
 
 const caseStudies = (await getCollection("caseStudies")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
