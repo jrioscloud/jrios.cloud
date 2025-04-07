@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ServiceOfferCard from "../ServiceOfferCard.astro";
+import ServiceOfferCard from "../cards/ServiceOfferCard.astro";
 const serviceOfferings = (await getCollection("serviceOfferings")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
