@@ -64,24 +64,12 @@ import Content from "../../content/manifesto.md";
         <Header />
         <main>
             <article>
-                <div class="hero-image">
-                    {
-                        heroImage && (
-                            <img
-                                width={1020}
-                                height={510}
-                                src={heroImage}
-                                alt=""
-                            />
-                        )
-                    }
-                </div>
                 <div class="prose">
                     <div class="title">
                         <div class="date">
                             <FormattedDate date={"2025-04-06T00:00:00Z"} />
                             {
-                                "2025-04-06T00:00:00Z" && (
+                                (
                                     <div class="last-updated-on">
                                         Last updated on{" "}
                                         <FormattedDate
